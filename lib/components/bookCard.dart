@@ -50,7 +50,7 @@ class BookCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'Rs ' + price,
+                    'Rs $price',
                     style: const TextStyle(fontSize: 16, color: Colors.black),
                   ),
                   ElevatedButton.icon(
