@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book_store/pages/bookViewer.dart';
 
 class BookCard extends StatelessWidget {
   final String img;
@@ -24,11 +25,19 @@ class BookCard extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Row(
           children: [
-            Image.asset(
-              img,
-              // width: 70,
-              height: 180,
-              // fit: BoxFit.cover,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.asset(
+                img,
+                height: 180,
+                width: 120,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => const Icon(
+                  Icons.broken_image,
+                  size: 100,
+                  color: Colors.grey,
+                ),
+              ),
             ),
             const SizedBox(width: 10),
             Expanded(
@@ -53,13 +62,27 @@ class BookCard extends StatelessWidget {
                     'Rs $price',
                     style: const TextStyle(fontSize: 16, color: Colors.black),
                   ),
+                  const SizedBox(height: 10),
                   ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.shopping_cart),
-                    label: const Text('Add to cart'),
+                    onPressed: () {
+                      // Navigate to the BookViewer page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BookViewer(
+                            title: title,
+                            author: author,
+                            price: price,
+                            img: img,
+                          ),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.visibility),
+                    label: const Text('View Book'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.lightBlue,
+                      foregroundColor: Colors.white,
                       elevation: 2,
                     ),
                   ),
