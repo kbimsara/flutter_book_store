@@ -17,8 +17,6 @@
 
 ![Demo GIF](demo.gif)
 
-> Add your GIF file named `demo.gif` in the root directory or update the path above.
-
 ---
 
 ## Installation 🚀
