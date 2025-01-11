@@ -23,7 +23,7 @@
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/bookhub.git
+   git clone https://github.com/kbimsara/flutter_book_store.git
    cd bookhub
 
 2. **Install Dependenciesy**
